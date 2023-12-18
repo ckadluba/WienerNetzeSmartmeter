@@ -53,7 +53,7 @@ class BaseSensor(SensorEntity, ABC):
         self._attr_unit_of_measurement = UnitOfEnergy.KILO_WATT_HOUR
 
         self.attrs: dict[str, Any] = {}
-        self._name: str = zaehlpunkt
+        self._name: str = zaehlpunkt + "k"
         self._state: int | str | None = None
         self._available: bool = True
         self._updatets: str | None = None
