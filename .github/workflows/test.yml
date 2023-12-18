@@ -1,6 +1,6 @@
 name: Tests
 
-on: [pull_request, push]
+on: [pull_request, push, workflow_dispatch]
 
 jobs:
   build:
@@ -17,9 +17,9 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Restore venv cache
         uses: actions/cache@v3
-        id: cache-venv  # name for referring later
+        id: cache-venv # name for referring later
         with:
-          path: .venv/  # what we cache: the virtualenv
+          path: .venv/ # what we cache: the virtualenv
           # The cache key depends on requirements.txt
           key: ${{ runner.os }}-${{ matrix.python-version }}-venv-${{ hashFiles('tests/requirements*.txt') }}
           restore-keys: |
