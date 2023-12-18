@@ -11,7 +11,7 @@ coverage:
         threshold: 1%
         base: auto
 ignore:
-  - "custom_components/wnsm/translations"
+  - "custom_components/wnsmk/translations"
 component_management:
   default_rules: # default rules that will be inherited by all components
     statuses:
@@ -19,10 +19,10 @@ component_management:
         target: auto
   individual_components:
     - component_id: module_api
-      name: api  # this is a display name, and can be changed freely
+      name: api # this is a display name, and can be changed freely
       paths:
-        - "custom_components/wnsm/api/**"
+        - "custom_components/wnsmk/api/**"
     - component_id: module_integration
-      name: integration  # this is a display name, and can be changed freely
+      name: integration # this is a display name, and can be changed freely
       paths:
-        - "custom_components/wnsm/[^/api/].*"
+        - "custom_components/wnsmk/[^/api/].*"
