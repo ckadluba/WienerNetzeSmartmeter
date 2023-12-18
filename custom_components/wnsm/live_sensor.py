@@ -30,6 +30,7 @@ class LiveSensor(BaseSensor, SensorEntity):
             self._attr_extra_state_attributes = zaehlpunkt
 
             if self.is_active(zaehlpunkt):
+                state_is_from_yesterday = False
                 consumptions = await self.get_consumptions(smartmeter)
                 base_information = await self.get_base_information(smartmeter)
                 meter_readings = await self.get_meter_readings(smartmeter)
@@ -63,6 +64,7 @@ class LiveSensor(BaseSensor, SensorEntity):
                         )
                         if yesterdays_sum > 0:
                             self._state = yesterdays_sum
+                        state_is_from_yesterday = True
                     else:
                         _LOGGER.error("Unable to load consumption")
                         _LOGGER.error(
@@ -75,7 +77,10 @@ class LiveSensor(BaseSensor, SensorEntity):
                         )
                         return
             self._available = True
-            self._updatets = datetime.now().strftime("%d.%m.%Y %H:%M:%S")
+            if state_is_from_yesterday:
+                self._updatets = before(today()).strftime("%d.%m.%Y 23:59:00")
+            else:
+                self._updatets = datetime.now().strftime("%d.%m.%Y %H:%M:%S")
         except TimeoutError as e:
             self._available = False
             _LOGGER.warning("Error retrieving data from smart meter api - Timeout: %s" % e)
