@@ -29,13 +29,13 @@ jobs:
       - name: ZIP wnsm Dir
         run: |
           cd ${{ github.workspace }}/custom_components/wnsmk
-          zip wnsm.zip -r ./
+          zip wnsmk.zip -r ./
       - name: Upload zip to release
         uses: svenstaro/upload-release-action@v1-release
 
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: ${{ github.workspace }}/custom_components/wnsmk/wnsm.zip
-          asset_name: wnsm.zip
+          file: ${{ github.workspace }}/custom_components/wnsmk/wnsmk.zip
+          asset_name: wnsmk.zip
           tag: ${{ github.ref }}
           overwrite: true
