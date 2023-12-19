@@ -25,8 +25,8 @@ jobs:
       - name: "Set version number"
         run: |
           python3 ${{ github.workspace }}/manage/update_manifest.py --version ${{ steps.version.outputs.version }}
-      # Pack the wnsm dir as a zip and upload to the release
-      - name: ZIP wnsm Dir
+      # Pack the wnsmk dir as a zip and upload to the release
+      - name: ZIP wnsmk Dir
         run: |
           cd ${{ github.workspace }}/custom_components/wnsmk
           zip wnsmk.zip -r ./

@@ -21,7 +21,7 @@ from it import (
     mock_get_api_key,
     expect_history,
 )
-from wnsm.api.errors import SmartmeterConnectionError, SmartmeterLoginError
+from wnsmk.api.errors import SmartmeterConnectionError, SmartmeterLoginError
 
 
 @pytest.mark.usefixtures("requests_mock")

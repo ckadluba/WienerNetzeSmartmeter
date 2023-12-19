@@ -14,8 +14,8 @@ from urllib import parse
 # necessary for pytest-cov to measure coverage
 myPath = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, myPath + '/../../custom_components')
-from wnsm import api # noqa: E402
-from wnsm.api.constants import Resolution # noqa: E402
+from wnsmk import api # noqa: E402
+from wnsmk.api.constants import Resolution # noqa: E402
 
 def _dt_string(datetime_string):
         return datetime_string.strftime("%Y-%m-%dT%H:%M:%S.%f")[:-3] + "Z"

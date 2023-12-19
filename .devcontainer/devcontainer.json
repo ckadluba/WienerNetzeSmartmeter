@@ -1,6 +1,6 @@
 {
 	"image": "ludeeus/container:integration-debian",
-	"name": "wnsm integration development",
+	"name": "wnsmk integration development",
 	"context": "..",
 	"appPort": [
 		"9123:8123"

@@ -22,7 +22,7 @@ providing information about a registered [WienerNetze Smartmeter](https://www.wi
 Copy `<project-dir>/custom_components/wnsmk` into `<home-assistant-root>/config/custom_components`
 
 ### HACS
-1. Search for `Wiener Netze Smart Meter` or `wnsm` in HACS
+1. Search for `Wiener Netze Smart Meter` or `wnsmk` in HACS
 2. Install
 3. ...
 4. Profit!
